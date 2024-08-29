@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Data Entry Form Demo</h2>
+    <form id="contactForm">
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required autocomplete="on" value="0"><br><br>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        
+    </form>
+    <button onclick="myFunction()">Send email</button>
+    <script>
+        //var submitButton = document.getElementByName("submit"); //Retrieve 'submit' element from document
+        function myFunction(){
+         //submitButton.addEventListener("click", { //After button has been clicked, this is executed after that
+            var email = document.getElementById("email").value; //Retrieve value of the variable from document
+            var age = document.getElementById("age").value; //Retrieve value of variable from document
+            var age_number = Number(age) //converts string into number
+            if(age>200||age<=0) //Sets limits for what age can be entered
+        {alert("Data entry invalid");} //Alert function is called if the data entry is invalid
+        //})
+        }
+    </script>
+</body>
+</html>
