@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/home/student/Documents/styles.css">
+    <title>ICTWEB441 JavaScript Demo Page</title>
+</head>
+<body>
+    <h1 >JavaScript Button Demo</h1>
+    <p id="p1">A Demo Button for Practice</p> 
+    <div id="rssContainer"> 
+        
+    </div>
+    <button id="myButton" onclick="myFunction()">Try this Button!</button> <!--button that executes 'myFunction' labelled 'Try this Button!'-->
+    <button id="rssButton" onclick="getRSS()">Click here to get RSS!</button><!--button that execute funtion 'getRSS' labelled 'Click here to get RSS!'-->
+
+    <h1>Toggle Between Light and Dark Mode</h1>
+    <p>Click the button below to toggle between light and dark mode for this page</p>
+    <button onclick="changeMode()">Toggle between modes</button> <!--Creates a button to change between modes-->
+
+    <h2>Data Entry Form Demo</h2>
+    <form id="contactForm">
+        <label for="age">Age:</label> <!--created label named 'Age'-->
+        <input type="number" id="age" name="age" required autocomplete="on" value="0"><br><br> <!--form has a number input, has to be completed to be valid-->
+
+        <label for="email">Email</label> <!--created label named'Email-->
+        <input type="email" id="email" name="email" required><br><br> <!--email is input into this form-->
+
+        
+    </form>
+    <button onclick="myFunction1()">Send email</button>
+    <script>
+        function myFunction(){
+            var myElement = document.getElementById("p1"); //Creates a variable and Finds the element "p1" inside of the HTML document
+            myElement.innerHTML = "Button Clicked"; //Allows you to get or change the HTML content inside an element
+        }
+        function getRSS(){
+            const myURL = "https://rss.app/feeds/v1.1/6OqxRHTi7PZtL6rr.json"; //declares the URL as a constant variable (can't be changed)
+            fetch(myURL) //makes a HTTP request to server to fetch URL
+            .then(response => response.json()) //converts the response data into json, result of response goes into data variable
+            .then(data => alert(data)); //data is passed to alert function and displays an alert dialog box 
+            var htmlContent = data.items[0].content_html; //retrieves the first item of the HTML content in the 'items' list
+            alert(htmlContent); //'htmlcontent' variable is passed to alert function 
+            document.getElementById("rssContainer").innerHTML = htmlContent; //rssContainer inner HTML content is set the value of the htmlContent element
+        }
+            function changeMode(){
+            document.body.classList.toggle("darkMode"); //toggles between modes defined in CSS Styles sheet
+        }
+
+        //var submitButton = document.getElementByName("submit"); //Retrieve 'submit' element from document
+        function myFunction1(){
+         //submitButton.addEventListener("click", { //After button has been clicked, this is executed after that
+            var email = document.getElementById("email").value; //Retrieve value of the variable from document
+            var age = document.getElementById("age").value; //Retrieve value of variable from document
+            var age_number = Number(age) //converts string into number
+            if(age>200||age<=0) //Sets limits for what age can be entered
+        {alert("Data entry invalid");} //Alert function is called if the data entry is invalid
+        //})
+        }
+
+        
+    </script>    
+</body>
+</html>
