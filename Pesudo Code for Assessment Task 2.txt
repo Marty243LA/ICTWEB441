@@ -1,0 +1,19 @@
+myFunction:
+Find the element with ID "p1"
+Change its inner HTML to "Button Clicked"
+
+getRss:
+Define the RSS feed URL
+Fetch the URL
+Convert the response to json
+Retrieve the description, title and link of the first item
+Display these values in alert boxes.
+Set the inner HTML of elements with IDs “rssContainer”, “titleContainer”, and “imageContainer” to the retrieved values.
+
+changeMode:
+Toggle the “darkMode” class on the body element.
+
+dataValidation:
+Get the value of the “email” input.
+Get the value of the “age” input and convert it to a number.
+If the age is not within the valid range (0 < age <= 200), display an alert saying “Data entry invalid”.
