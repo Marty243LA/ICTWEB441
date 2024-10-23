@@ -12,7 +12,7 @@
     <div id="rssContainer"></div>
     <div id="titleContainer"></div>
     <div id="imageContainer"></div>
-    <button id="myButton" onclick="myFunction()">Try this Button!</button>
+    <button id="myButton" onclick="changeText()">Try this Button!</button>
     <button id="rssButton" onclick="getRSS()">Click here to get RSS!</button>
 
     <h1>Toggle Between Light and Dark Mode</h1>
@@ -31,7 +31,8 @@
     </form>
     <button onclick="dataValidation()">Send email</button>
     <script>
-        function myFunction(){
+        //Author:LA 2024
+        function changeText(){
             var myElement = document.getElementById("p1"); //Creates a variable and Finds the element "p1" inside of the HTML document
             myElement.innerHTML = "Button Clicked"; //Allows you to get or change the HTML content inside an element
         }
