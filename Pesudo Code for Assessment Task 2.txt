@@ -1,8 +1,8 @@
-myFunction:
+changeText function:
 Find the element with ID "p1"
 Change its inner HTML to "Button Clicked"
 
-getRss:
+getRss function:
 Define the RSS feed URL
 Fetch the URL
 Convert the response to json
@@ -10,7 +10,7 @@ Retrieve the description, title and link of the first item
 Display these values in alert boxes.
 Set the inner HTML of elements with IDs “rssContainer”, “titleContainer”, and “imageContainer” to the retrieved values.
 
-changeMode:
+changeMode function:
 Toggle the “darkMode” class on the body element.
 
 dataValidation:
